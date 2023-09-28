@@ -40,7 +40,7 @@ python manage.py runserver
 Register a new User in the app according to the following example.
 
 ```python
-url = 'http://127.0.0.1:8000/signup/'
+url = 'http:#127.0.0.1:8000/signup/'
 
 data = {
     'username': 'myUserName',
@@ -55,7 +55,7 @@ print(response.status_code, ">>>", response.text)
 Use your valid username and password to log in the system and receive your authentication token.
 
 ```python
-url = 'http://127.0.0.1:8000/login/'
+url = 'http:#127.0.0.1:8000/login/'
 
 data = {
     'username': 'myUserName',
@@ -72,7 +72,7 @@ print(response.status_code, ">>>", response.text)
 Remember to log out of your account when you are done to ensure that the created token for your session is invalidated. Otherwise, your account privacy would be at risk of abusing.
 
 ```python
-url = 'http://127.0.0.1:8000/logout/'
+url = 'http:#127.0.0.1:8000/logout/'
 
 headers = {
     'Authorization': f'Token {token}',
@@ -87,7 +87,7 @@ print(response.status_code, ">>>", response.text)
 Post your content using the template below. We consider that you already have logged in and retrieved your token as `token`.
 
 ```python
-url = 'http://127.0.0.1:8000/create-post/'
+url = 'http:#127.0.0.1:8000/create-post/'
 
 data = {
     'title': 'Huawei is on Fire',
@@ -106,7 +106,7 @@ print(response.status_code, ">>>", response.text)
 Get all the avaialble posts on the app using the following example. It is assumed that the user is logged in and the token is received and valid.
 
 ```python
-url = 'http://127.0.0.1:8000/get-all-posts/'
+url = 'http:#127.0.0.1:8000/get-all-posts/'
 
 headers = {
     'Authorization': f'Token {token}',
@@ -121,7 +121,7 @@ Also, you can fetch a specific post from the server if you set the ID value for 
 
 ```python
 post_id = 1
-url = 'http://127.0.0.1:8000/get-post/post_id'
+url = 'http:#127.0.0.1:8000/get-post/post_id'
 
 headers = {
     'Authorization': f'Token {token}',
@@ -137,15 +137,15 @@ Edit your post title and/or content as you wish.
 
 ```python
 post_id = 1
-url = 'http://127.0.0.1:8000/update-post/post_id'
+url = 'http:#127.0.0.1:8000/update-post/post_id'
 
 headers = {
     'Authorization': f'Token {token}',
 }
 
 data = {
-    "title": "Huawei is on Fire" // drop the line if you don't seek to edit the title
-    "content": "New Content Here" // drop the line if you don't seek to edit the content
+    "title": "Huawei is on Fire" # drop the line if you don't seek to edit the title
+    "content": "New Content Here" # drop the line if you don't seek to edit the content
 }
 
 response = requests.post(url, json=data, headers=headers)
@@ -158,7 +158,7 @@ Delete your post using the post ID.
 
 ```python
 post_id = 1
-url = 'http://127.0.0.1:8000/delete-post/post_id'
+url = 'http:#127.0.0.1:8000/delete-post/post_id'
 
 headers = {
     'Authorization': f'Token {token}',
